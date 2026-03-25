@@ -72,5 +72,6 @@ cask "chatgpt"
 cask "todoist-app"
 cask "bitwarden"
 cask "rustdesk"
+cask "clash-verge-rev"
 
 cask "soulseek"
