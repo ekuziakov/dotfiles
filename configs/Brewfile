@@ -33,6 +33,7 @@ brew "wget"
 brew "bat"
 brew "btop"
 brew "mole"
+brew "rsync"
 
 brew "node_exporter"
 
