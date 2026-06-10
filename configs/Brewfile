@@ -76,6 +76,6 @@ cask "todoist-app"
 cask "bitwarden"
 cask "rustdesk"
 cask "clash-verge-rev"
-cask "claude-code"
+cask "obs"
 
 cask "soulseek"
