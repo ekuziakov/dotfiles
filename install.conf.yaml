@@ -30,6 +30,8 @@
         path: configs/fish
     ~/.config/lazygit:
         path: configs/lazygit
+    ~/.config/opencode:
+        path: configs/opencode
     ~/.config/starship.toml:
         path: configs/starship/starship.toml
     ~/.hammerspoon:
