@@ -54,7 +54,7 @@
       stderr: true
     -
       description: Installing homebrew packages
-      command: brew bundle --cleanup -v --file configs/Brewfile
+      command: brew bundle --cleanup --force-cleanup -v --file configs/Brewfile
       stdin: true
       stdout: true
       stderr: true

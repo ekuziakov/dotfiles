@@ -1,5 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export EDITOR:nvim
+SETUVAR --export HTTPS_PROXY:http\x3a//localhost\x3a7897
+SETUVAR --export HTTP_PROXY:http\x3a//localhost\x3a7897
 SETUVAR --export VISUAL:nvim
 SETUVAR __fish_initialized:4300
