@@ -37,6 +37,7 @@ brew "mole"
 brew "rsync"
 brew "openai-whisper"
 brew "iperf3"
+brew "f3"
 
 brew "node_exporter"
 
