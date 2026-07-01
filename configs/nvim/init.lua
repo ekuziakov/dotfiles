@@ -112,12 +112,27 @@ require("lazy").setup({
     { "stevearc/conform.nvim" },
     { "OXY2DEV/markview.nvim", lazy = false },
     { "folke/which-key.nvim", event = "VeryLazy" },
+    {
+      "otavioschwanck/arrow.nvim",
+      dependencies = {
+        { "echasnovski/mini.icons" },
+      },
+      opts = {
+        show_icons = true,
+        leader_key = ";",        -- open arrow menu
+        buffer_leader_key = "m", -- per-buffer bookmarks
+      },
+    },
   },
   install = { colorscheme = { "habamax" } },
   checker = { enabled = true },
 })
 
 vim.g.have_nerd_font = true
+
+-- Arrow keymaps
+vim.keymap.set("n", "H", require("arrow.persist").previous, { desc = "Arrow: previous bookmark" })
+vim.keymap.set("n", "L", require("arrow.persist").next, { desc = "Arrow: next bookmark" })
 
 -- Icons setup
 require("mini.icons").setup()
