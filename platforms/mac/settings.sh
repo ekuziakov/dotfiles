@@ -1,29 +1,3 @@
-# Dock apps
-apps=(
-    "/System/Applications/Apps.app"
-    "/Applications/Zen.app"
-    "/Applications/Spark Desktop.app"
-    "/Applications/Todoist.app"
-    "/Applications/Obsidian.app"
-    "/Applications/Ghostty.app"
-)
-defaults write com.apple.dock persistent-apps -array
-defaults write com.apple.dock persistent-others -array
-for app in "${apps[@]}"; do
-  defaults write com.apple.dock persistent-apps -array-add "<dict>
-     <key>tile-data</key>
-     <dict>
-       <key>file-data</key>
-       <dict>
-         <key>_CFURLString</key>
-         <string>$app</string>
-         <key>_CFURLStringType</key>
-         <integer>0</integer>
-       </dict>
-     </dict>
-   </dict>"
-done
-
 # Finder
 defaults write com.apple.finder "AppleShowAllFiles" -bool "true"
 defaults write com.apple.finder "ShowStatusBar" -bool "true"

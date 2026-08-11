@@ -43,9 +43,9 @@ brew "node_exporter"
 
 cask "font-fira-code-nerd-font"
 
-cask "raycast"
 cask "karabiner-elements"
 cask "hammerspoon"
+cask "maccy"
 cask "ghostty"
 cask "orbstack"
 cask "zen"
@@ -79,5 +79,7 @@ cask "bitwarden"
 cask "rustdesk"
 cask "clash-verge-rev"
 cask "obs"
+cask "frankea/whisky/whisky"
+cask "steam"
 
 cask "soulseek"
