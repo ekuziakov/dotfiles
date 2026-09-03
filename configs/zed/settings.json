@@ -9,7 +9,7 @@
 {
   "cursor_blink": false,
   "vim": {
-    "toggle_relative_line_numbers": true
+    "toggle_relative_line_numbers": true,
   },
   "restore_on_startup": "launchpad",
   "icon_theme": "Catppuccin Mocha",
@@ -21,18 +21,16 @@
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/home/egor/projects/monorepo/./"
-          ]
-        }
-      ]
-    }
+          "paths": ["/home/egor/projects/monorepo/./"],
+        },
+      ],
+    },
   ],
   "disable_ai": true,
   "telemetry": {
     "diagnostics": false,
     "metrics": false,
-    "anthropic_retention": false
+    "anthropic_retention": false,
   },
   "ui_font_size": 16,
   "buffer_font_size": 15,
@@ -40,5 +38,9 @@
     "mode": "system",
     "light": "One Light",
     "dark": "Catppuccin Mocha",
+  },
+  "auto_install_extensions": {
+    "catppuccin": true,
+    "catppuccin-icons": true,
   },
 }
