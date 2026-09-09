@@ -1,3 +1,5 @@
+#!/usr/bin/env fish
+
 # Finder
 defaults write com.apple.finder "AppleShowAllFiles" -bool "true"
 defaults write com.apple.finder "ShowStatusBar" -bool "true"

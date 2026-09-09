@@ -44,49 +44,31 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    # Temporaly disabling
-    # -
-    #   description: Installing linux dependencies
-    #   command: |
-    #     if [ "$(uname)" = "Linux" ]; then
-    #       if ! dpkg -s build-essential >/dev/null 2>&1; then
-    #         sudo apt-get update
-    #         sudo apt-get install -y build-essential
-    #       fi
-    #     fi
-    #   stdin: true
-    #   stdout: true
-    #   stderr: true
+    -
+      description: Installing linux dependencies
+      command: |
+        fish -c 'if test (uname) = Linux; and not dpkg -s build-essential >/dev/null 2>&1
+          sudo apt-get update
+          and sudo apt-get install -y build-essential
+        end'
+      stdin: true
+      stdout: true
+      stderr: true
     -
       description: Installing homebrew packages
       command: brew bundle --cleanup --force-cleanup -v --file configs/Brewfile
       stdin: true
       stdout: true
       stderr: true
-    # Temporaly disabling
-    # -
-    #   description: Set fish as default shell (only if needed)
-    #   command: |
-    #     if [ "$SHELL" != "$(command -v fish)" ]; then
-    #       echo "$(command -v fish)" | sudo tee -a /etc/shells
-    #       chsh -s "$(command -v fish)"
-    #     fi
-    #   stdin: true
-    #   stdout: true
-    #   stderr: true
     -
       description: Install mise tools
       command: mise install
       stdin: true
       stdout: true
       stderr: true
-    # Temporaly disabling
-    # -
-    #   description: Applying MacOS settings
-    #   command: |
-    #     if [ "$(uname)" = "Darwin" ]; then
-    #       sh platforms/mac/settings.sh
-    #     fi
-    #   stdin: true
-    #   stdout: true
-    #   stderr: true
+    -
+      description: Applying macOS settings
+      command: fish -c 'if test (uname) = Darwin; fish platforms/mac/settings.fish; end'
+      stdin: true
+      stdout: true
+      stderr: true

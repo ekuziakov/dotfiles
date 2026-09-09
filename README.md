@@ -1,89 +1,61 @@
 # Dotfiles
 
-## 🚀 Getting Started
+> A reproducible macOS development environment, managed with [Dotbot](https://github.com/anishathalye/dotbot), Homebrew, and Mise.
 
-### 1. Install Homebrew
-[Install Homebrew](https://brew.sh/) if it is not already installed.
-*Note: You do not need to manually set the shell PATH for Homebrew immediately; the build script handles the binary path.*
+## Quick Start
 
-### 2. Clone Repository
-Clone this repository to your **Home** directory (e.g., `~/dotfiles`).
+Install [Homebrew](https://brew.sh/), then bootstrap the environment:
 
 ```bash
 git clone <REPO_URL> ~/.dotfiles
-cd ~/.dotfiles
+~/.dotfiles/install
 ```
 
-### 3. Install & Configure
-Run the install script.
+The installer:
+
+1. Initializes the Dotbot submodule.
+2. Links the managed configuration into your home directory.
+3. Installs the Homebrew bundle.
+4. Installs tools declared in Mise.
+
+## Default Shell
+
+Set Fish as the default login shell after installation:
+
+```fish
+if test "$SHELL" != (command -v fish)
+  command -v fish | sudo tee -a /etc/shells
+  chsh -s (command -v fish)
+end
+```
+
+Open a new terminal session after running the command.
+
+## Included
+
+| Area | Configuration |
+| --- | --- |
+| Editors | Neovim, Zed |
+| Terminal | Ghostty, Alacritty, tmux, Zellij, Yazi |
+| Shell | Fish, Zsh, Starship, Mise |
+| Desktop | Karabiner-Elements, Hammerspoon |
+| Development | LazyGit, OpenCode |
+
+All configuration lives in [`configs/`](configs) and is linked to the appropriate location by Dotbot.
+
+## Keep It Current
+
+Re-run the installer whenever the configuration or package bundle changes:
 
 ```bash
-./install
+~/.dotfiles/install
 ```
 
----
+Packages and applications are declared in [`configs/Brewfile`](configs/Brewfile).
 
-## ⚙️ Manual Configuration
+> [!WARNING]
+> Homebrew runs with `--cleanup`. Packages installed outside the Brewfile can be removed during an update.
 
-Some settings cannot be automated via scripts and require manual setup.
+## Platform
 
-
-1.  **Import Settings:**
-    *   Open Raycast.
-    *   Go to Settings > Advanced > Import.
-    *   Select the configuration file located in the `raycast/` directory of this repo.
-2.  **Disable Spotlight:**
-    *   System Settings > Keyboard > Keyboard Shortcuts > Spotlight.
-    *   Uncheck **Show Spotlight search** (to allow Raycast to use `Cmd + Space`).
-3.  **Fix Hyperkey Conflict:**
-    *   System Settings > Keyboard > Keyboard Shortcuts > Services.
-    *   Expand **Text**.
-    *   Find **Convert Text to Simplified Chinese** & **Convert Text to Traditional Chinese**.
-    *   Click the shortcut, then press `Backspace` (Delete) to remove the shortcut.
-    *   *Reason: These system shortcuts often conflict with Hyperkey setups, especially when trying to bind complex key combinations involving Control, Option, and Command keys through tools like Raycast.*
-3.  **Disable Input Source Switching (for tmux compatibility):**
-    *   System Settings > Keyboard > Keyboard Shortcuts > Input Sources.
-    *   Uncheck **Select the previous input source**.
-    *   Uncheck **Select next source in Input menu**.
-    *   *Reason: `Control + Space` is often used as a prefix in tmux, and these shortcuts can cause conflicts.*
-
-### Zen Browser
-Zen Browser profiles must be imported manually.
-1.  Open Zen Browser.
-2.  Follow the guide here: [Zen Browser Profile Management](https://docs.zen-browser.app/guides/manage-profiles).
-3.  Import the profile data/folder if you have exported it previously.
-
----
-
-## 🛠 Development & Maintenance
-
-### Updating
-To update your system (Brew packages, dotfiles, or macOS settings), simply run the rebuild script again:
-
-```bash
-dot-rebuild
-```
-
-### Changing system packages
-Packages are managed declaratively via the `Brewfile`.
-
-To browse the list of packages go to [formulae.brew.sh](https://formulae.brew.sh).
-
-> **⚠️ Important:** The rebuild script uses `brew bundle --cleanup`. Any packages installed manually via the terminal (e.g., `brew install <package>`) that are **not** added to the `Brewfile` will be automatically uninstalled when you run the script. This ensures your environment exactly matches the file.
-
-### Customizing macOS Defaults
-The `macsettings.sh` file handles system defaults using the `defaults` command.
-
-**Reference:**
-*   List of common defaults: [macos-defaults.com](https://macos-defaults.com)
-
-**Debugging the Dock:**
-To read the current Dock configuration (useful for finding Bundle IDs for `macsettings.sh`):
-
-```bash
-defaults read com.apple.dock persistent-apps
-```
-
-## 🔗 References
-
-*   **Powerlevel10k Homebrew Installation:** [https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#homebrew](https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#homebrew)
+macOS is the supported platform. The installer applies [`platforms/mac/settings.fish`](platforms/mac/settings.fish) system defaults on macOS and installs `build-essential` on Debian-based Linux systems.
