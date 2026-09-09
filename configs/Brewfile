@@ -82,5 +82,6 @@ cask "clash-verge-rev"
 cask "obs"
 cask "frankea/whisky/whisky"
 cask "steam"
+cask "fluidvoice"
 
 cask "soulseek"
