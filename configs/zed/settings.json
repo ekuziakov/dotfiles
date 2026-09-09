@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "terminal": {
+    "font_family": "FiraCode Nerd Font"
+  },
   "cursor_blink": false,
   "vim": {
     "toggle_relative_line_numbers": true,
