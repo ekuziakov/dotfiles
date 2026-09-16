@@ -8,13 +8,13 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "git_panel": {
-    "tree_view": true
+    "tree_view": true,
   },
   "cli_default_open_behavior": "new_window",
   "terminal": {
     "default_height": 9999.0,
     "default_width": 9999.0,
-    "font_family": "FiraCode Nerd Font"
+    "font_family": "FiraCode Nerd Font",
   },
   "cursor_blink": false,
   "vim": {
@@ -51,5 +51,6 @@
   "auto_install_extensions": {
     "catppuccin": true,
     "catppuccin-icons": true,
+    "dockerfile": true,
   },
 }
