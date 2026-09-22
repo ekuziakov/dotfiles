@@ -38,6 +38,7 @@ brew "rsync"
 brew "openai-whisper"
 brew "iperf3"
 brew "f3"
+brew "superfile"
 
 brew "node_exporter"
 
