@@ -21,6 +21,9 @@ zoxide init fish | source
 fzf --fish | source
 set -x XDG_CONFIG_HOME $HOME/.config
 
+# Bitwarden SSH Agent
+set -gx SSH_AUTH_SOCK "$HOME/.bitwarden-ssh-agent.sock"
+
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
