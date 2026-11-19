@@ -82,6 +82,7 @@ cask "frankea/whisky/whisky"
 cask "steam"
 cask "handy"
 cask "hermes-desktop"
+cask "claude-code"
 
 tap "chen08209/tap"
 cask "chen08209/tap/flclash"
