@@ -18,6 +18,30 @@ The installer:
 3. Installs the Homebrew bundle.
 4. Installs tools declared in Mise.
 
+## Secrets
+
+Only empty templates from [`secrets.example/`](secrets.example) belong in Git.
+The installer copies missing templates into `~/.config/secrets/`, with directory
+permissions `700` and new file permissions `600`. Existing files are never
+overwritten.
+
+To prepare secret files without running the full installer:
+
+```bash
+bash ~/.dotfiles/scripts/setup-secrets.sh
+```
+
+On a new computer, run the installer, then fill each file in
+`~/.config/secrets/` with its real value from your password manager. Keep these
+values outside the repository.
+
+For Hindsight, put the full MCP endpoint URL in `~/.config/secrets/hindsight-url`
+without quotes or a trailing newline.
+Put only the token in `~/.config/secrets/hindsight-token`:
+no `Bearer` prefix, quotes, or trailing newline. Then remove `"disabled": true`
+from the `hindsight` server in `configs/opencode/opencode.jsonc`. OpenCode reads
+the token through `{file:~/.config/secrets/hindsight-token}`.
+
 ## Default Shell
 
 Set Fish as the default login shell after installation:

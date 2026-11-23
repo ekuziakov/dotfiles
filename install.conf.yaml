@@ -43,6 +43,7 @@
 
 
 - shell:
+    - [bash scripts/setup-secrets.sh, Preparing local secret files]
     - [git submodule update --init --recursive, Installing submodules]
     -
       description: Installing linux dependencies

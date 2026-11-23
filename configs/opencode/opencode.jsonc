@@ -2,6 +2,15 @@
   "$schema": "https://opencode.ai/config.json",
   "mcp": {
     "servers": {
+      "hindsight": {
+        "type": "remote",
+        "url": "{file:~/.config/secrets/hindsight-url}",
+        "oauth": false,
+        "disabled": true,
+        "headers": {
+          "Authorization": "Bearer {file:~/.config/secrets/hindsight-token}"
+        }
+      },
       "browse": {
         "type": "local",
         "command": [
