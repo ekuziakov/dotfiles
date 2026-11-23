@@ -5,10 +5,10 @@
       "browse": {
         "type": "local",
         "command": [
-          "/Users/egor/.local/bin/browse",
+          "browse",
           "mcp"
         ],
-        "cwd": "/Users/egor",
+        "cwd": "{env:HOME}",
         "pool": true,
         "environment": {
           "OPENCODE_BROWSER_RUNTIME": "auto-update"
