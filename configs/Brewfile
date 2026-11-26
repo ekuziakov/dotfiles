@@ -83,6 +83,7 @@ cask "steam"
 cask "handy"
 cask "hermes-desktop"
 cask "claude-code"
+cask "opencode-desktop"
 
 tap "chen08209/tap"
 cask "chen08209/tap/flclash"
